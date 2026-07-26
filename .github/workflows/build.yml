@@ -64,9 +64,11 @@ jobs:
           import os, re
           appid = os.environ.get('ADMOB_APP_ID', '').strip()
           if not appid:
-              # Google's official TEST App ID — safe placeholder
-              appid = 'ca-app-pub-3940256099942544~3347511713'
-              print('WARNING: ADMOB_APP_ID secret not set, using Google TEST App ID')
+              # Cat Trap Adventure live AdMob App ID — App IDs are not secret
+              # (they ship inside every APK). Override via ADMOB_APP_ID secret if
+              # building a different app from this repo.
+              appid = 'ca-app-pub-0733808293057598~1343445756'
+              print(f'Using default AdMob App ID: {appid}')
           path = 'android/app/src/main/AndroidManifest.xml'
           xml = open(path).read()
           meta = ('        <meta-data\n'

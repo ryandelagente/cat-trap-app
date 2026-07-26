@@ -57,7 +57,7 @@ Repo → **Settings → Secrets and variables → Actions → New repository sec
 | `KEYSTORE_PASSWORD` | your keystore password |
 | `KEY_ALIAS` | `cattrap` |
 | `KEY_PASSWORD` | your key password (same as above unless you set a different one) |
-| `ADMOB_APP_ID` | `ca-app-pub-XXXXXXXXXXXXXXXX~YYYYYYYYYY` from AdMob |
+| `ADMOB_APP_ID` | *(optional)* `ca-app-pub-XXXXXXXXXXXXXXXX~YYYYYYYYYY` — only set if building a **different** AdMob-backed app from this repo. The Cat Trap App ID is already hardcoded as the default. |
 
 If you skip these, the build still runs but produces an **unsigned** file that
 Play will reject — useful only for testing that the build works.

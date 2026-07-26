@@ -20,10 +20,10 @@ $v = $v -replace 'compileSdkVersion = .*', 'compileSdkVersion = 36'
 $v = $v -replace 'targetSdkVersion = .*',  'targetSdkVersion = 36'
 Set-Content android/variables.gradle $v
 
-# AdMob App ID
+# AdMob App ID — Cat Trap Adventure live App ID (not secret; ships in every APK).
+# Override via `$env:ADMOB_APP_ID = "..."` when building a different app.
 $appId = if ($env:ADMOB_APP_ID) { $env:ADMOB_APP_ID } else {
-  Write-Host "WARNING: using Google TEST AdMob App ID (set ADMOB_APP_ID to override)" -ForegroundColor Yellow
-  "ca-app-pub-3940256099942544~3347511713"
+  "ca-app-pub-0733808293057598~1343445756"
 }
 $manifest = "android/app/src/main/AndroidManifest.xml"
 $xml = Get-Content $manifest -Raw

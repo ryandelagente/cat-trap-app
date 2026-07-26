@@ -27,8 +27,9 @@ sed -i.bak 's/targetSdkVersion = .*/targetSdkVersion = 36/'   android/variables.
 rm -f android/variables.gradle.bak
 
 # --- AdMob App ID ---
-APPID="${ADMOB_APP_ID:-ca-app-pub-3940256099942544~3347511713}"
-[ -z "$ADMOB_APP_ID" ] && echo "⚠️  Using Google TEST AdMob App ID (set ADMOB_APP_ID to override)"
+# Cat Trap Adventure live App ID (not secret; ships in every APK).
+# Override with `export ADMOB_APP_ID=...` when building a different app.
+APPID="${ADMOB_APP_ID:-ca-app-pub-0733808293057598~1343445756}"
 python3 - "$APPID" <<'PY'
 import sys
 appid = sys.argv[1]
