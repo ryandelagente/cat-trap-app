@@ -1,0 +1,13 @@
+{
+  "appId": "com.nayrevil.cattrap",
+  "appName": "Cat Trap Adventure",
+  "webDir": "www",
+  "android": {
+    "allowMixedContent": false
+  },
+  "plugins": {
+    "AdMob": {
+      "initializeForTesting": false
+    }
+  }
+}

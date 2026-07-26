@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "ms-vscode.live-server",
+    "redhat.vscode-xml",
+    "richardwillis.vscode-gradle",
+    "github.vscode-github-actions",
+    "anthropic.claude-code"
+  ]
+}

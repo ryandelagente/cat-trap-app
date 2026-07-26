@@ -1,0 +1,39 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "▶ Play game in browser",
+      "type": "shell",
+      "command": "npx serve www -l 5000",
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    },
+    {
+      "label": "🔨 Build Android AAB",
+      "type": "shell",
+      "command": "bash build-local.sh",
+      "windows": { "command": "powershell -ExecutionPolicy Bypass -File build-local.ps1" },
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "🔄 Sync web changes to Android",
+      "type": "shell",
+      "command": "npx cap sync android",
+      "problemMatcher": []
+    },
+    {
+      "label": "📱 Run on connected phone",
+      "type": "shell",
+      "command": "npx cap run android",
+      "problemMatcher": []
+    },
+    {
+      "label": "🧹 Clean Android build",
+      "type": "shell",
+      "command": "cd android && ./gradlew clean",
+      "windows": { "command": "cd android; ./gradlew.bat clean" },
+      "problemMatcher": []
+    }
+  ]
+}
